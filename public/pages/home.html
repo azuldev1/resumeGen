@@ -1,0 +1,9 @@
+<div>
+    <h1>{{message}}</h1>
+    <ul>
+        <li class = "col-mid-12 text-center" id={{channel._id}} ng-repeat="channel in channels">{{channel.name}} <button ng-click ="delete(channel._id)">DELETE</button></li>
+    </ul>
+</div>
+
+
+
