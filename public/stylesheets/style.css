@@ -11,15 +11,13 @@ li{
   list-style: none;
 }
 
-
+/*form styling*/
 fieldset{
   background: #FCFCFC;
   padding: 16px;
   border: 1px solid #D5D5D5;
 }
-.addfields{
-  margin: 10px 0;
-}
+
 
 #choicesDisplay {
   padding: 10px;
@@ -27,19 +25,96 @@ fieldset{
   border: 1px solid rgb(171, 239, 171);
   color: rgb(9, 56, 9);
 }
-.remove{
-  background: #C76868;
-  color: #FFF;
-  font-weight: bold;
-  font-size: 21px;
-  border: 0;
-  cursor: pointer;
-  display: inline-block;
-  padding: 4px 9px;
-  vertical-align: top;
-  line-height: 100%;
-}
+
 input[type="text"],
+
 select{
   padding:5px;
+}
+
+button.addfield{
+    margin-top: 15px;
+
+
+}
+
+
+/*form styling of contact fields*/
+.contactField{
+    height: 60px;
+    padding: 15px;
+
+}
+.contactField select{
+    margin: 0 2em 0;
+
+}
+@media (max-width: 768px) {
+    .contactField{
+        height: 80px;
+        padding: 20px;
+    }
+
+    .contactField select{
+        margin: 0 2em 0;
+    }
+}
+
+/*form styling of personal fields*/
+.skillField{
+    height: 80px;
+}
+.skillField  div:first-of-type{
+    padding: 2em;
+}
+
+@media (max-width: 768px) {
+    .skillField{
+        height: 125px;
+    }
+    .skillField  div:first-of-type{
+        padding: 1em;
+    }
+}
+
+/*form styling of edu/emp fields*/
+.bottomRemove{
+    padding: 1em;
+}
+
+.dynamicSet{
+    padding:1em;
+}
+
+.dynamicSet select{
+    margin:1em;
+}
+/*form submit button*/
+.finalSubmit{
+    top: 2em;
+}
+
+/*form styling of proskill fields*/
+.proskillField{
+    height: 120px;
+    padding: 15px;
+}
+.proskillField  div:first-of-type{
+    padding: 1.5em;
+}
+.proskillField  button:first-of-type{
+    margin: 1.5em 0 0;
+}
+
+@media (max-width: 992px) {
+    .proskillField{
+        height: 200px;
+        padding: 20px;
+    }
+    .proskillField  div:first-of-type{
+        padding: 1em;
+    }
+    .proskillField  button:first-of-type{
+        margin: 1em 0 0;
+    }
 }

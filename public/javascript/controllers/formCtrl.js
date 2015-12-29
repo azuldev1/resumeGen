@@ -11,6 +11,8 @@ app.controller('formCtrl',['$scope','$http', function($scope,$http){
     $scope.schools = [{id: 'education1'}];
     //Employert scope
     $scope.employers = [{id: 'employer1'}];
+    //professional skills scope
+    $scope.proSkills = [{id: 'skill1'}, {id: 'skill2'}];
     //Contact add/delete
     $scope.addNewChoice = function() {
         var newItemNo = $scope.infos.length+1;
@@ -37,6 +39,16 @@ app.controller('formCtrl',['$scope','$http', function($scope,$http){
 
     $scope.removeChoiceEmp = function(index) {
         $scope.employers.splice(index, 1);
+    };
+
+    //professional skill add/delete
+    $scope.addNewChoiceProskill = function() {
+        var newItemNo = $scope.employers.length+1;
+        $scope.proSkills.push({'id':'employer'+newItemNo});
+    };
+
+    $scope.removeChoiceProskill = function(index) {
+        $scope.proSkills.splice(index, 1);
     };
 
     $scope.submit = function(resume) {
