@@ -3,11 +3,11 @@
  */
 var express = require('express');
 var router = express.Router();
-var channelPost = require('../models/resumeform.js');
+var resumePost = require('../models/resumeform.js');
 
 /* GET channels listing. */
 router.post('/', function (req, res, next) {
-    channelPost(req);
+    resumePost(req);
     res.send(200);
 });
 

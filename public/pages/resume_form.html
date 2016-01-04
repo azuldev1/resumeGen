@@ -1,187 +1,228 @@
+<div class = 'Wrap'>
+    <div class='container-fluid formWrap'>
+        <form name='resumeForm' novalidate>
+            <div class = 'text-center'>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-6 col-md-2 control-label text-right">Name:</label>
+                    <div class="col-sm-6 col-md-2">
+                        <input id="fN" ng-model="resume.firstname" type="text" placeholder="First Name" name="firstName" required/>
+                        <div class="help-block error-messages" ng-messages="resumeForm.firstName.$error" ng-if="resumeForm.firstName.$touched">
+                            <p ng-messages-include="messages.html"></p>
+                        </div>
+                    </div>
 
-<div class='container-fluid'>
-    <form name='resumeForm'>
-        <div class = 'text-center'>
-            <div class="form-group">
-                <label for="firstName" class="col-sm-6 col-md-2 control-label text-right">Name:</label>
-                <div class="col-sm-6 col-md-2">
-                    <input id="fN" ng-model="resume.firstname" type="text" placeholder="First Name" name="firstName" required=""/>
                 </div>
-            </div>
 
-            <div class="form-group ">
-                <label for="lastName" class="col-sm-6 col-md-2 control-label text-right">Last Name:</label>
-                <div class="col-sm-6 col-md-2">
-                    <input id="lN" ng-model="resume.lastname" type="text" placeholder="Last Name" name="lastName" required=""/>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="title" class="col-sm-6 col-md-2 control-label text-right">Professional Title:</label>
-                <div class="col-sm-6 col-md-2">
-                    <input id="lN" ng-model="resume.title" type="text" placeholder="Professional Title" name="lastName" required=""/>
-                </div>
-            </div>
-        </div>
-            <hr class = 'col-sm-12'/>
-            <div class="col-sm-12 text-center lead ">Location</div>
-
-            <div class = "container-fluid text-center">
-                <div class="form-group col-md-6">
-                    <label for="cityname" class="col-md-2  col-md-push-5 control-label text-right">City:</label>
-                    <div class="col-md-4  col-md-push-5">
-                        <input id="cN" ng-model="resume.city" type="text" placeholder="City" name="cityname" required=""/>
+                <div class="form-group ">
+                    <label for="lastName" class="col-sm-6 col-md-2 control-label text-right">Last Name:</label>
+                    <div class="col-sm-6 col-md-2">
+                        <input id="lN" ng-model="resume.lastname" type="text" placeholder="Last Name" name="lastName" required/>
+                        <div class="help-block error-messages" ng-messages="resumeForm.lastName.$error" ng-if="resumeForm.lastName.$touched">
+                            <p ng-messages-include="messages.html"></p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-group col-md-6">
-                    <label for="state" class="col-md-2 control-label text-right">State:</label>
-                    <div class="col-md-4">
-                        <input id="sN" ng-model="resume.states" type="text" placeholder="State" name="state" required=""/>
+                <div class="form-group">
+                    <label for="title" class="col-sm-6 col-md-2 control-label text-right">Professional Title:</label>
+                    <div class="col-sm-6 col-md-2">
+                        <input id="lN" ng-model="resume.title" type="text" placeholder="Professional Title" name="title" required/>
+                        <div class="help-block error-messages" ng-messages="resumeForm.title.$error" ng-if="resumeForm.title.$touched">
+                            <p ng-messages-include="messages.html"></p>
+                        </div>
                     </div>
                 </div>
             </div>
+                <hr class = 'col-sm-12'/>
+                <div class="col-sm-12 text-center lead ">Location</div>
 
-
-            <label class="col-sm-12 text-center" for="profile">Profile:</label>
-            <div class="col-sm-6 col-sm-offset-3">
-                <textarea id = "profile" class="form-control" ng-model="resume.profile" rows="3" maxlength="50" required=""></textarea>
-            </div>
-
-            <hr class = 'col-sm-12' />
-                <div class="col-sm-12 text-center lead"><span>Contact Info</span></div>
-                <div class="form-group col-sm-12 text-center">
-                        <fieldset class="contactField col-sm-12"  data-ng-repeat="info in infos">
-                            <select required ng-model="resume.info.type['type_'+$index]">
-                                <option>Mobile</option>
-                                <option>Home</option>
-                                <option>Office</option>
-                                <option>Email</option>
-                                <option>Website</option>
-                            </select>
-                            <input type="text" ng-model="resume.info.detail['detail_' +$index]" name="" placeholder="Enter mobile number">
-                            <button class="btn btn-danger" ng-click="removeChoice($index)"><strong>-</strong></button>
-                        </fieldset>
-                        <button class="addfield btn btn-info" ng-click="addNewChoice()">Add Info</button>
-                </div>
-
-            <hr class = 'col-sm-12' />
-                <div class="col-sm-12 text-center lead"><span>Personal Skills<span></div>
-                <div class="form-group col-sm-12 text-center">
-                        <fieldset class = "skillField col-sm-12" data-ng-repeat="personalSkill in perSkills">
-                            <div class="col-sm-6 text-center">
-                                <input class="type="text" ng-model="resume.personalSkill.skill['skill_' +$index]" name="" placeholder="Enter Personal Skill">
+                <div class = "container-fluid text-center">
+                    <div class="form-group col-md-6">
+                        <label for="cityname" class="col-md-2  col-md-push-5 control-label text-right">City:</label>
+                        <div class="col-md-4  col-md-push-5">
+                            <input id="cN" ng-model="resume.city" type="text" placeholder="City" name="cityName"  required>
+                            <div class="help-block error-messages" ng-messages="resumeForm.cityName.$error" ng-if="resumeForm.cityName.$touched">
+                                <p ng-messages-include="messages.html"></p>
                             </div>
-                            <div class="col-sm-4 text-center">
-                                <label for="fader" ng-show="!resume.personalSkill.skill['skill_' +$index]">Skill level</label>
-                                <label for="fader" ng-show="resume.personalSkill.skill['skill_' +$index]">{{resume.personalSkill.skill['skill_' +$index]}}</label>
-                                <span ng-show="!resume.personalSkill.value['value_' +$index]"><output for="fader" id="skill">Slide Me</output></span>
-                                <span ng-show="resume.personalSkill.value['value_' +$index]"><output for="fader" id="skill">{{resume.personalSkill.value['value_' +$index]}}</output></span>
-                                <input ng-model="resume.personalSkill.value['value_' +$index]" type="range" min="0" max="200" id="fader" step ="15">
-                            </div>
-                        </fieldset>
-
-                </div>
-
-            <hr class = 'col-sm-12'/>
-                <div class="col-sm-12 text-center lead"><span>Education</span></div>
-                <div class="form-group col-sm-12  text-center">
-                    <div class="container-fluid" >
-                        <fieldset class="dynamicSet"  data-ng-repeat="education in schools">
-                            <input type="text" ng-model="resume.education['entry' + $index].name" name="" placeholder="School Name">
-                            <select ng-model="resume.education['entry' + $index].degree">
-                                <option>High School Diploma</option>
-                                <option>Certificate</option>
-                                <option>A.A.</option>
-                                <option>B.A.</option>
-                                <option>B.S.</option>
-                                <option>M.A.</option>
-                                <option>M.S.</option>
-                            </select>
-                            <label class="col-sm-12" for="startDate">Start Date:</label>
-                            <div ng-controller= "DatepickerCtrl" class="col-sm-4 col-sm-offset-4 text-center">
-                                <p class="input-group">
-                                    <input id ="startDate" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="resume.education['entry' + $index].start" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-                                        <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                                        </span>
-                            </div>
-                            <label class="col-sm-12" for="endDate">End Date:</label>
-                            <div ng-controller= "DatepickerCtrl" class="col-sm-4 col-sm-offset-4 text-center">
-                                <p class="input-group">
-                                    <input id ="endDate" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="resume.education['entry' + $index].end" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-                                        <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                                        </span>
-                            </div>
-
-                            <label class="col-sm-12" for="educationBlurb">Education Blurb:</label>
-                            <div class="col-sm-6 col-sm-offset-3">
-                                <textarea id="educationBlurb" class="form-control" ng-model="resume.education['entry' + $index].blurb" rows="3"></textarea>
-                            </div>
-                            <div class = "col-sm-12 bottomRemove"><button class="btn btn-danger" ng-click="removeChoiceEdu($index)"><strong>-</strong></button></div>
-                        </fieldset>
-                        <button class="addfield btn btn-info" ng-click="addNewChoiceEdu()">Add School</button>
+                        </div>
                     </div>
-                </div>
-            <hr class = 'col-sm-12' />
-                <div class="col-sm-12 text-center lead"><span>Employers</span></div>
-                <div class="form-group col-sm-12  text-center">
-                    <div class="container-fluid" >
-                        <fieldset class="dynamicSet"  data-ng-repeat="employer in employers">
-                            <input type="text" ng-model="resume.employer['entry' + $index].name" name="" placeholder="Employers Name">
-                            <input type="text" ng-model="resume.employer['entry' + $index].title" name="" placeholder="Title">
-                            <label class="col-sm-12" for="startDate">Start Date:</label>
-                            <div ng-controller= "DatepickerCtrl" class="col-sm-4 col-sm-offset-4 text-center">
-                                <p class="input-group">
-                                    <input id ="startDate" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="resume.employer['entry' + $index].start" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-                                                <span class="input-group-btn">
-                                                    <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                                                </span>
-                            </div>
-                            <label class="col-sm-12" for="endDate">End Date:</label>
-                            <div ng-controller= "DatepickerCtrl" class="col-sm-4 col-sm-offset-4 text-center">
-                                <p class="input-group">
-                                    <input id ="endDate" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="resume.employer['entry' + $index].end" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-                                                <span class="input-group-btn">
-                                                    <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                                                </span>
-                            </div>
 
-                            <label class="col-sm-12" for="educationBlurb">Duties:</label>
-                            <div class="col-sm-6 col-sm-offset-3">
-                                <textarea id="duties" class="form-control" ng-model="resume.employer['entry' + $index].duties" rows="3"></textarea>
+                    <div class="form-group col-md-6">
+                        <label for="state" class="col-md-2 control-label text-right">State:</label>
+                        <div class="col-md-4">
+                            <input id="sN" ng-model="resume.states" type="text" placeholder="State" name="state" ng-minlength="2" ng-maxlength="3" required/>
+                            <div class="help-block error-messages" ng-messages="resumeForm.state.$error" ng-if="resumeForm.state.$touched">
+                                <p ng-message="minlength">Enter State Abbreviation.</p>
+                                <p ng-message="maxlength">Enter State Abbreviation.</p>
+                                <p ng-message="required">Enter State Abbreviation.</p>
                             </div>
-                            <div class = "col-sm-12 bottomRemove"><button class="btn btn-danger" ng-click="removeChoiceEmp($index)"><strong>-</strong></button></div>
-                        </fieldset>
-                        <button class="addfield btn btn-info" ng-click="addNewChoiceEmp()">Add Employer</button>
+                        </div>
                     </div>
                 </div>
 
-            <hr class = 'col-sm-12' />
-                <div class="col-sm-12 text-center lead"><span>Professional Skills<span></div>
-                <div class="form-group col-sm-12 text-center">
-                        <fieldset class="proskillField col-sm-12"  data-ng-repeat="proSkill in proSkills">
-                            <div class="col-sm-6 text-center">
-                                <input type="text" ng-model="resume.professionalSkill.skill['skill_' +$index]" name="" placeholder="Enter Personal Skill">
-                            </div>
-                            <div class="col-sm-4 text-center">
-                                <label for="fader" ng-show="!resume.professionalSkill.skill['skill_' +$index]">Skill level</label>
-                                <label for="fader" ng-show="resume.professionalSkill.skill['skill_' +$index]">{{resume.professionalSkill.skill['skill_' +$index]}}</label>
-                                <span ng-show="!resume.professionalSkill.value['value_' +$index]"><output for="fader" id="skill">Slide Me</output></span>
-                                <span ng-show="resume.professionalSkill.value['value_' +$index]"><output for="fader" id="skill">{{resume.professionalSkill.value['value_' +$index]}}</output></span>
-                                <input ng-model="resume.professionalSkill.value['value_' +$index]"  type="range" min="0" max="200" id="fader" step ="15">
-                            </div>
-                            <button class="btn btn-danger" ng-click="removeChoiceProskill($index)"><strong>-</strong></button>
 
-                        </fieldset>
-                        <button class="addfield btn btn-info" ng-click="addNewChoiceProskill()">Add Skill</button>
+                <label class="col-sm-12 text-center" for="profile">Profile:</label>
+                <div class="col-sm-6 col-sm-offset-3 " ng-class="{ 'has-error': resumeForm.profile.$invalid && resumeForm.profile.$dirty }">
+                    <textarea id = "profile" name = "profile" class="form-control" ng-model="resume.profile" rows="3" ng-minlength="10" ng-maxlength="50" required></textarea>
+                </div>
+                <!--NG messages for profile text box-->
+                <div class="help-block error-messages col-sm-6 col-sm-offset-3" ng-messages="resumeForm.profile.$error" ng-if="resumeForm.profile.$dirty">
+                    <p ng-message="minlength">Your profile is too short.</p>
+                    <p ng-message="maxlength">Your profile is too long.</p>
+                    <p ng-message="required">Your profile is required.</p>
                 </div>
 
-            <button  ng-click ="submit(resume)" type="submit" class="finalSubmit col-sm-offset-3 col-sm-6 btn-primary btn-lg btn-default form-button">Submit</button>
-    </form>
+                <hr class = 'col-sm-12' />
+                    <div class="col-sm-12 text-center lead"><span>Contact Info</span></div>
+                    <div class="form-group col-sm-12 text-center">
+                            <fieldset ng-class="{'contactError': resumeForm['info' + $index].$touched && resumeForm['info' + $index].$invalid}" class="contactField col-sm-12"  data-ng-repeat="info in infos">
+                                <select required ng-model="resume.info.type['type_'+$index]" required>
+                                    <option>Mobile</option>
+                                    <option>Home</option>
+                                    <option>Office</option>
+                                    <option>Email</option>
+                                    <option>Website</option>
+                                </select>
+                                <input type="text" ng-model="resume.info.detail['detail_' +$index]" name="info{{$index}}" placeholder="Enter info" required>
+                                <button class="btn btn-danger" ng-click="removeChoice($index)"><strong>-</strong></button>
+                                <div class = 'clearfix'></div>
+                                <div class="help-block error-messages col-sm-2 col-sm-offset-6" ng-messages="resumeForm['info' + $index].$error" ng-if="resumeForm['info' + $index].$touched">
+                                    <p ng-messages-include="messages.html"></p>
+                                </div>
+                            </fieldset>
+                            <button class="addfield btn btn-info" ng-click="addNewChoice()">Add Info</button>
+                    </div>
+
+                <hr class = 'col-sm-12' />
+                    <div class="col-sm-12 text-center lead"><span>Personal Skills<span></div>
+                    <div class="form-group col-sm-12 text-center">
+                            <fieldset class = "skillField col-sm-12" data-ng-repeat="personalSkill in perSkills">
+                                <div class="col-sm-6 text-center">
+                                    <input name= 'personalSkill{{$index}}' type="text" ng-model="resume.personalSkill.skill['skill_' +$index]" placeholder="Enter Personal Skill" required>
+                                </div>
+                                <div class="col-sm-4 text-center">
+                                    <label for="fader" ng-show="!resume.personalSkill.skill['skill_' +$index]">Skill level</label>
+                                    <label for="fader" ng-show="resume.personalSkill.skill['skill_' +$index]">{{resume.personalSkill.skill['skill_' +$index]}}</label>
+                                    <span ng-show="!resume.personalSkill.value['value_' +$index]"><output for="fader" id="skill">Slide Me</output></span>
+                                    <span ng-show="resume.personalSkill.value['value_' +$index]"><output for="fader" id="skill">{{resume.personalSkill.value['value_' +$index]}}</output></span>
+                                    <input name= 'personalSlider' ng-model="resume.personalSkill.value['value_' +$index]" type="range" min="0" max="200" id="fader" step ="15" required>
+                                </div>
+
+                            </fieldset>
+                    </div>
+
+                <hr class = 'col-sm-12'/>
+                    <div class="col-sm-12 text-center lead"><span>Education</span></div>
+                    <div class="form-group col-sm-12  text-center">
+                        <div class="container-fluid" >
+                            <fieldset class="dynamicSet"  data-ng-repeat="education in schools">
+                                <input type="text" ng-model="resume.education['entry' + $index].name" name="" placeholder="School Name">
+                                <select ng-model="resume.education['entry' + $index].degree">
+                                    <option>High School Diploma</option>
+                                    <option>Certificate</option>
+                                    <option>A.A.</option>
+                                    <option>B.A.</option>
+                                    <option>B.S.</option>
+                                    <option>M.A.</option>
+                                    <option>M.S.</option>
+                                </select>
+                                <label class="col-sm-12" for="startDate">Start Date:</label>
+                                <div ng-controller= "DatepickerCtrl" class="col-sm-4 col-sm-offset-4 text-center">
+                                    <p class="input-group">
+                                        <input id ="startDate" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="resume.education['entry' + $index].start" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                            </span>
+                                </div>
+                                <label class="col-sm-12" for="endDate">End Date:</label>
+                                <div ng-controller= "DatepickerCtrl" class="col-sm-4 col-sm-offset-4 text-center">
+                                    <p class="input-group">
+                                        <input id ="endDate" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="resume.education['entry' + $index].end" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                            </span>
+                                </div>
+
+                                <label class="col-sm-12" for="educationBlurb">Education Blurb:</label>
+                                <div class="col-sm-6 col-sm-offset-3" ng-class="{ 'has-error': resumeForm['education' + $index].$invalid && resumeForm['education' + $index].$dirty}">
+                                    <textarea name="education{{$index}}" id="educationBlurb" class="form-control" ng-model="resume.education['entry' + $index].blurb" rows="3"  ng-minlength="10" ng-maxlength="50" required></textarea>
+                                </div>
+                                <!--NG messages for education text box-->
+                                <div  class="help-block error-messages col-sm-6 col-sm-offset-3" ng-messages="resumeForm['education' + $index].$error" ng-if="resumeForm['education' + $index].$dirty">
+                                    <p ng-message="minlength">Please elaborate, too short.</p>
+                                    <p ng-message="maxlength">Please summarize, too long.</p>
+                                    <p ng-message="required">Please list some general duties.</p>
+                                </div>
+                                <div class = "col-sm-12 bottomRemove"><button class="btn btn-danger" ng-click="removeChoiceEdu($index)"><strong>-</strong></button></div>
+                            </fieldset>
+                            <button class="addfield btn btn-info" ng-click="addNewChoiceEdu()">Add School</button>
+                        </div>
+                    </div>
+                <hr class = 'col-sm-12' />
+                    <div class="col-sm-12 text-center lead"><span>Employers</span></div>
+                    <div class="form-group col-sm-12  text-center">
+                        <div class="container-fluid" >
+                            <fieldset class="dynamicSet"  data-ng-repeat="employer in employers">
+                                <input type="text" ng-model="resume.employer['entry' + $index].name" name="" placeholder="Employers Name">
+                                <input type="text" ng-model="resume.employer['entry' + $index].title" name="" placeholder="Title">
+                                <label class="col-sm-12" for="startDate">Start Date:</label>
+                                <div ng-controller= "DatepickerCtrl" class="col-sm-4 col-sm-offset-4 text-center">
+                                    <p class="input-group">
+                                        <input id ="startDate" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="resume.employer['entry' + $index].start" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                                    <span class="input-group-btn">
+                                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                    </span>
+                                </div>
+                                <label class="col-sm-12" for="endDate">End Date:</label>
+                                <div ng-controller= "DatepickerCtrl" class="col-sm-4 col-sm-offset-4 text-center">
+                                    <p class="input-group">
+                                        <input id ="endDate" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="resume.employer['entry' + $index].end" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                                    <span class="input-group-btn">
+                                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                    </span>
+                                </div>
+
+                                <label class="col-sm-12" for="duties">Duties:</label>
+                                <div class="col-sm-6 col-sm-offset-3" ng-class="{ 'has-error': resumeForm['duties' + $index].$invalid && resumeForm['duties' + $index].$dirty}">
+                                    <textarea name= 'duties{{$index}}' id="duties" class="form-control" ng-model="resume.employer['entry' + $index].duties" rows="3" ng-minlength="10" ng-maxlength="50" required></textarea>
+                                </div>
+                                <!--NG messages for duties text box-->
+                                <div  class="help-block error-messages col-sm-6 col-sm-offset-3" ng-messages="resumeForm['duties' + $index].$error" ng-if="resumeForm['duties' + $index].$dirty">
+                                    <p ng-message="minlength">Please elaborate, too short.</p>
+                                    <p ng-message="maxlength">Please summarize, too long.</p>
+                                    <p ng-message="required">Please list some general duties.</p>
+                                </div>
+
+                                <div class = "col-sm-12 bottomRemove"><button class="btn btn-danger" ng-click="removeChoiceEmp($index)"><strong>-</strong></button></div>
+                            </fieldset>
+                            <button class="addfield btn btn-info" ng-click="addNewChoiceEmp()">Add Employer</button>
+                        </div>
+                    </div>
+
+                <hr class = 'col-sm-12' />
+                    <div class="col-sm-12 text-center lead"><span>Professional Skills<span></div>
+                    <div class="form-group col-sm-12 text-center">
+                            <fieldset class="proskillField col-sm-12"  data-ng-repeat="proSkill in proSkills">
+                                <div class="col-sm-6 text-center">
+                                    <input type="text" ng-model="resume.professionalSkill.skill['skill_' +$index]" name="" placeholder="Enter Personal Skill">
+                                </div>
+                                <div class="col-sm-4 text-center">
+                                    <label for="fader" ng-show="!resume.professionalSkill.skill['skill_' +$index]">Skill level</label>
+                                    <label for="fader" ng-show="resume.professionalSkill.skill['skill_' +$index]">{{resume.professionalSkill.skill['skill_' +$index]}}</label>
+                                    <span ng-show="!resume.professionalSkill.value['value_' +$index]"><output for="fader" id="skill">Slide Me</output></span>
+                                    <span ng-show="resume.professionalSkill.value['value_' +$index]"><output for="fader" id="skill">{{resume.professionalSkill.value['value_' +$index]}}</output></span>
+                                    <input ng-model="resume.professionalSkill.value['value_' +$index]"  type="range" min="0" max="200" id="fader" step ="15" required>
+                                </div>
+                                <button class="btn btn-danger" ng-click="removeChoiceProskill($index)"><strong>-</strong></button>
+
+                            </fieldset>
+                            <button class="addfield btn btn-info" ng-click="addNewChoiceProskill()">Add Skill</button>
+                    </div>
+
+                <button  ng-click ="submit(resume)" type="submit"  ng-class="{ 'invalidSubmit': resumeForm.$invalid}" class="finalSubmit col-sm-offset-3 col-sm-6 btn-primary btn-lg btn-default form-button" ng-disabled="resumeForm.$invalid">Submit</button>
+        </form>
+    </div>
 </div>
-
 
 <!--<h1>{{message}}</h1>-->
 

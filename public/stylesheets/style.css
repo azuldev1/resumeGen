@@ -1,8 +1,14 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+div.Wrap{
+    height: 100%;
+    padding-top: 70px;
+}
+.login{
+    margin-right: 5px;
+}
 a {
   color: #00B7FF;
 }
@@ -42,6 +48,11 @@ button.addfield{
 /*form styling of contact fields*/
 .contactField{
     height: 60px;
+    padding: 15px;
+
+}
+.contactError{
+    height: 160px;
     padding: 15px;
 
 }
@@ -117,4 +128,28 @@ button.addfield{
     .proskillField  button:first-of-type{
         margin: 1em 0 0;
     }
+}
+
+/*form styling of error messages fields*/
+.error-messages.ng-active {
+    background:maroon;
+    color:white;
+    padding:5px;
+    border-radius:5px;
+    margin-top:15px;
+    position:relative;
+}
+.error-messages.ng-active:after {
+    position:absolute;
+    top:-10px;
+    content:"";
+    left:20px;
+    border-style:solid;
+    border-color:transparent transparent maroon;
+    border-width:5px;
+}
+
+/*invalid submit*/
+.invalidSubmit{
+    background-color: hsla(207, 55%, 46%, 0.48);
 }

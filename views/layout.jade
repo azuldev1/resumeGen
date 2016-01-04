@@ -9,24 +9,20 @@ html(ng-app="myApp")
     //minimized angular bootstrapUI file in vendor folder did not place file with grunt
     link(rel='stylesheet', href='/vendor/angular-ui-bootstrap/ui-bootstrap-csp.css')
     script(src="/vendor/angular-ui-bootstrap/ui-bootstrap-tpls.min.js" type="text/javascript")
-    ////Angualr-xeditable script/css
-    //link(rel="stylesheet", href="/vendor/angular-xeditable-0.1.8/css/xeditable.css")
-    //script(src="/vendor/angular-xeditable-0.1.8/js/xeditable.min.js" type="text/javascript")
-    //Angualr config file clientside javascript
-    script(src="/javascript/app.js")
+    //minimized angular messages file in vendor folder did not place file with grunt
+    script(src="/vendor/angular-messages/angular-messages.min.js" type="text/javascript")
+    // client side javascript & css
+    script(src="/javascript/app.js" type="text/javascript")
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
 
 
   body
-    ul
-      li
-        a(ng-href='#/') Home
-      li
-        a(ng-href='#/form') Form
+
+
 
     //Controllers
-    script(src="/javascript/controllers/homeCtrl.js" type="text/javascript")
+    script(src="/javascript/controllers/resumeviewCtrl.js" type="text/javascript")
     script(src="/javascript/controllers/formCtrl.js" type="text/javascript")
     script(src="/javascript/controllers/DatepickerCtrl.js" type="text/javascript")
     //Services

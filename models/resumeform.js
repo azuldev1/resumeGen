@@ -7,7 +7,7 @@ var express = require('express');
 var mongoClient = require('mongodb').MongoClient;
 
 // connects to MongoDB for us, using the URL we're passing in
-var channelPost = function(req){
+var resumePost = function(req){
     mongoClient.connect(MONGO_DB, function(err, db) {
         var collection = db.collection('resumes');
         collection.insert(req.body);
@@ -16,4 +16,4 @@ var channelPost = function(req){
     });
 };
 
-module.exports = channelPost;
+module.exports = resumePost;
