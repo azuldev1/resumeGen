@@ -1,6 +1,18 @@
-<div class="Wrap">
-    <h1>{{message}}</h1>
+<div class="wrapUl" id="shelf-1" snap-drawer>
     <ul>
-        <li class = "col-mid-12 text-center" id={{resume._id}} ng-repeat="resume in resumeviews">{{resume.firstname}} <button ng-click ="delete(channel._id)">alskdjaklsjdasd</button></li>
+        <li ng-click ="setResume(resume)", class = "col-mid-12 shelfItem" ng-class="{active : isSelected(resume)}" ng-repeat="resume in resumeviews">
+            <a ng-click ="setResume(resume)">{{resume.resumename}}</a>
+        </li>
     </ul>
 </div>
+
+<div id="content" class="scrollable Wrap" snap-content snap-options="snapOpts">
+    <div ng-init= 'toggle(false)' ng-class="{'negativeWrap': toggle()}" class="resumeWrap">
+        <div class="">
+        </div>
+    </div>
+
+</div>
+
+
+<p> first name of selected item is : {{selected.firstname}} </p>

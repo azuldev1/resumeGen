@@ -1,22 +1,24 @@
+
 body {
   padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 div.Wrap{
     height: 100%;
     padding-top: 70px;
 }
-.login{
-    margin-right: 5px;
-}
-a {
-  color: #00B7FF;
-}
+
+
+
 
 li{
   list-style: none;
 }
-
+/*nav-bar styling*/
+.threeDots{
+    display: none !important;
+}
 /*form styling*/
 fieldset{
   background: #FCFCFC;
@@ -152,4 +154,72 @@ button.addfield{
 /*invalid submit*/
 .invalidSubmit{
     background-color: hsla(207, 55%, 46%, 0.48);
+}
+.active {
+
+    background-color: rgba(117, 163, 209, 0.32);
+}
+
+li a:hover {
+    text-decoration: none;
+    cursor:pointer;
+}
+/*Resume view shelf*/
+.wrapUl{
+  margin-top: 51px;
+  margin-left: -40px;
+}
+
+li.shelfItem{
+    width: inherit;
+    border: solid grey;
+    border-width: 1px 0 0;
+    padding: 10px;
+    cursor:pointer;
+
+}
+li.shelfItem:nth-child(2n+0) {
+    border-width:  1px 0;
+}
+
+li.shelfItem a{
+    color: grey;
+}
+#shelf-1 {
+    width: 100%;
+
+}
+
+#content {
+    background-color: #fff;
+
+    -moz-box-shadow: 0 0 20px #888;
+    -webkit-box-shadow: 0 0 20px #888;
+    box-shadow: 0 0 20px #888;
+}
+
+
+
+#nav-wrapper {
+
+    text-align: center;
+}
+/*Resume view conditional classes*/
+
+.negativeWrap{
+    margin: 0 !important;
+}
+.noScroll{
+    overflow: hidden !important;
+
+}
+.scrollable{
+    overflow: auto;
+    -webkit-transition-property: top, bottom;
+    transition-property: top, bottom;
+    -webkit-transition-duration: .2s, .2s;
+    transition-duration: .2s, .2s;
+    -webkit-transition-timing-function: linear, linear;
+    transition-timing-function: linear, linear;
+    -webkit-overflow-scrolling: touch;
 }

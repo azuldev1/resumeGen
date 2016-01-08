@@ -62,22 +62,6 @@ app.controller('formCtrl',['$scope','$http','$location', function($scope,$http,$
             $location.path('/resume_view');
         });
     };
+
 }]);
 
-
-//
-//app.controller('contactCtrl', function($scope) {
-//
-//    $scope.infos = [{id: 'info1'}];
-//
-//
-//    $scope.addNewChoice = function() {
-//        var newItemNo = $scope.infos.length+1;
-//        $scope.infos.push({'id':'info'+newItemNo});
-//    };
-//
-//    $scope.removeChoice = function(index) {
-//        $scope.infos.splice(index, 1);
-//    };
-//
-//});
