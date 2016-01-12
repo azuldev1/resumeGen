@@ -2,7 +2,7 @@
  * Created by Manu on 12/15/15.
  */
 var app = angular.module('myApp',['ngRoute',
-    'ui.bootstrap', 'ngMessages', 'snap']);
+    'ui.bootstrap', 'ngMessages', 'snap','angular-progress-arc']);
 app.config(['$routeProvider', function($routeProvider){
     $routeProvider
         .when('/', {
@@ -49,6 +49,9 @@ app.controller('navControl', ['$scope','sharedProperties', '$location', function
     $scope.showDots = $location.path() === '/resume_view';
 
 }]);
+
+
+
 
 
 

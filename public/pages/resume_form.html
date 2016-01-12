@@ -86,13 +86,13 @@
                     <div class="col-sm-12 text-center lead"><span>Contact Info</span></div>
                     <div class="form-group col-sm-12 text-center">
                             <fieldset ng-class="{'contactError': resumeForm['info' + $index].$touched && resumeForm['info' + $index].$invalid}" class="contactField col-sm-12"  data-ng-repeat="info in infos">
-                                <select required ng-model="resume.info.type['type_'+$index]" required>
+                                <select ng-model="resume.contact['info'+ $index].type" required>
                                     <option>Mobile</option>
                                     <option>Home</option>
                                     <option>Office</option>
                                     <option>Email</option>
                                     <option>Website</option>
-                                </select>resume.education['entry' + $index].degree
+                                </select>
                                 <input type="text" ng-model="resume.contact['info'+ $index].detail" name="info{{$index}}" placeholder="Enter info" required>
                                 <button class="btn btn-danger" ng-click="removeChoice($index)"><strong>-</strong></button>
                                 <div class = 'clearfix'></div>
@@ -108,14 +108,14 @@
                     <div class="form-group col-sm-12 text-center">
                             <fieldset class = "skillField col-sm-12" data-ng-repeat="personalSkill in perSkills">
                                 <div class="col-sm-6 text-center">
-                                    <input name= 'personalSkill{{$index}}' type="text" ng-model="resume.personalSkill.skill['skill_' +$index]" placeholder="Enter Personal Skill" required>
+                                    <input name= 'personalSkill{{$index}}' type="text" ng-model="resume.personalSkill['skill' +$index].name" placeholder="Enter Personal Skill" required>
                                 </div>
                                 <div class="col-sm-4 text-center">
-                                    <label for="fader" ng-show="!resume.personalSkill.skill['skill_' +$index]">Skill level</label>
-                                    <label for="fader" ng-show="resume.personalSkill.skill['skill_' +$index]">{{resume.personalSkill.skill['skill_' +$index]}}</label>
-                                    <span ng-show="!resume.personalSkill.value['value_' +$index]"><output for="fader" id="skill">Slide Me</output></span>
-                                    <span ng-show="resume.personalSkill.value['value_' +$index]"><output for="fader" id="skill">{{resume.personalSkill.value['value_' +$index]}}</output></span>
-                                    <input name= 'personalSlider' ng-model="resume.personalSkill.value['value_' +$index]" type="range" min="0" max="200" id="fader" step ="15" required>
+                                    <label for="fader" ng-show="!resume.personalSkill['skill' +$index].name">Skill level</label>
+                                    <label for="fader" ng-show="resume.personalSkill['skill' +$index].name">{{resume.personalSkill['skill' +$index].name}}</label>
+                                    <span ng-show="!resume.personalSkill['skill' +$index].value"><output for="fader" id="skill">Slide Me</output></span>
+                                    <span ng-show="resume.personalSkill['skill' +$index].value"><output for="fader" id="skill">{{resume.personalSkill['skill' +$index].value}}</output></span>
+                                    <input name= 'personalSlider' ng-model="resume.personalSkill['skill' +$index].value" type="range" min="0" max="200" id="fader" step ="15" required>
                                 </div>
 
                             </fieldset>
@@ -214,14 +214,14 @@
                     <div class="form-group col-sm-12 text-center">
                             <fieldset class="proskillField col-sm-12"  data-ng-repeat="proSkill in proSkills">
                                 <div class="col-sm-6 text-center">
-                                    <input type="text" ng-model="resume.professionalSkill.skill['skill_' +$index]" name="" placeholder="Enter Personal Skill">
+                                    <input type="text" ng-model="resume.professionalSkill['skill' +$index].name" name="" placeholder="Enter Personal Skill">
                                 </div>
                                 <div class="col-sm-4 text-center">
-                                    <label for="fader" ng-show="!resume.professionalSkill.skill['skill_' +$index]">Skill level</label>
-                                    <label for="fader" ng-show="resume.professionalSkill.skill['skill_' +$index]">{{resume.professionalSkill.skill['skill_' +$index]}}</label>
-                                    <span ng-show="!resume.professionalSkill.value['value_' +$index]"><output for="fader" id="skill">Slide Me</output></span>
-                                    <span ng-show="resume.professionalSkill.value['value_' +$index]"><output for="fader" id="skill">{{resume.professionalSkill.value['value_' +$index]}}</output></span>
-                                    <input ng-model="resume.professionalSkill.value['value_' +$index]"  type="range" min="0" max="200" id="fader" step ="15" required>
+                                    <label for="fader" ng-show="!resume.professionalSkill['skill' +$index].name">Skill level</label>
+                                    <label for="fader" ng-show="resume.professionalSkill['skill' +$index].name">{{resume.professionalSkill['skill' +$index].name}}</label>
+                                    <span ng-show="!resume.professionalSkill['skill' +$index].value"><output for="fader" id="skill">Slide Me</output></span>
+                                    <span ng-show="resume.professionalSkill['skill' +$index].value"><output for="fader" id="skill">{{resume.professionalSkill['skill' +$index].value}}</output></span>
+                                    <input ng-model="resume.professionalSkill['skill' +$index].value"  type="range" min="0" max="200" id="fader" step ="20" required>
                                 </div>
                                 <button class="btn btn-danger" ng-click="removeChoiceProskill($index)"><strong>-</strong></button>
 
@@ -229,10 +229,13 @@
                             <button class="addfield btn btn-info" ng-click="addNewChoiceProskill()">Add Skill</button>
                     </div>
 
-                <button  ng-click ="submit(resume)" type="submit"  ng-class="{ 'invalidSubmit': resumeForm.$invalid}" class="finalSubmit col-sm-offset-3 col-sm-6 btn-primary btn-lg btn-default form-button" ng-disabled="resumeForm.$invalid">Submit</button>
+                <button ng-disabled="resumeForm.$invalid"  ng-click ="submit(resume)" type="submit"  ng-class="{ 'invalidSubmit': resumeForm.$invalid}" class="finalSubmit col-sm-offset-3 col-sm-6 btn-primary btn-lg btn-default form-button" >Submit</button>
         </form>
     </div>
 </div>
+
+
+<!--ng-disabled="resumeForm.$invalid"-->
 
 <!--<h1>{{message}}</h1>-->
 
