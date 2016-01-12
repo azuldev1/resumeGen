@@ -4,6 +4,150 @@ div.resumeWrap{
     margin: 10px auto 80px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: .25in;
-    background: url("../images/lightNoise.png");
+    background-color: #6f5899;
+    /*background: url("../images/lightNoise.png");*/
     background-repeat: repeat;
+
+}
+/*Side A of resume content*/
+.iBlock{
+    display: inline-block;
+    position: relative;
+    float: left;
+}
+section.sidePersonal{
+    width:43%;
+    height: 100%;
+    display: inline-block;
+}
+
+.introBlock{
+    width: 100%;
+    height: 25%;
+    background-color: lightblue;
+}
+.profileBlock{
+    width: 100%;
+    height: 24%;
+    background-color: lightyellow;
+}
+
+.contactBlock{
+    width: 100%;
+    height: 24%;
+    background-color: lightcoral;
+}
+.personalBlock{
+    width: 100%;
+    height: 27%;
+    background-color: lightgreen;
+}
+
+/*Side B of resume content*/
+section.sideInfo{
+    width:57%;
+    height: 100%;
+    float: right;
+    display: inline-block;
+    border-left:  2pt solid black;
+}
+.educationBlock{
+    width: 100%;
+    height: 35%;
+    background-color: lightblue;
+}
+.employerBlock{
+    width: 100%;
+    height: 35%;
+    background-color: lightyellow;
+}
+.professionalBlock{
+    width: 100%;
+    height: 30%;
+    background-color: lightgreen;
+}
+/*Resume font styling*/
+.resumeFont{
+    margin: 5pt;
+    position: relative;
+    text-align: center;
+}
+h1.resumeFont{
+    margin: 5pt;
+    font-size: 24pt;
+    letter-spacing: 3pt;
+}
+h2.resumeFont{
+    margin: 3pt;
+    font-size: 18pt;
+    letter-spacing: 2pt;
+}
+h3.resumeFont{
+    font-size: 15pt;
+    letter-spacing: 1pt;
+    margin-top: 10pt;
+}
+
+/*Resume Icons*/
+div.personalIcon {
+     width: 80pt;
+     height: 80pt;
+     margin: 20pt auto 0;
+     background: lightgray;
+     -moz-border-radius: 40pt;
+     -webkit-border-radius: 40pt;
+     /*background-image: url("img/mobile.png");*/
+     /*background-size: 40px 40px;*/
+     /*background-position:50% 50%;*/
+     /*background-repeat:no-repeat;*/
+ }
+div.styleIcon {
+    width: 30pt;
+    height: 30pt;
+    margin: 20pt auto 0;
+    background: lightgray;
+    border: 1pt solid black;
+    -moz-border-radius: 15pt;
+    -webkit-border-radius: 15pt;
+    /*background-image: url("img/mobile.png");*/
+    /*background-size: 40px 40px;*/
+    /*background-position:50% 50%;*/
+    /*background-repeat:no-repeat;*/
+}
+/*fancy line styling*/
+h3.fancyLine span {
+    background: #fff;
+    padding: 0 10pt;
+    position: relative;
+    z-index: 1;
+}
+h3.fancyLine:before {
+    background: black;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 80%;
+    left:0;
+    right:0;
+    margin: auto;
+}
+
+h3.resumeFont:before {
+    left: 0;
+}
+
+/*Resume content styling*/
+.resumePara {
+    width: 80%;
+    font-size: 10pt;
+    margin: auto;
+
+}
+.contactList{
+    width: 80%;
+    margin-top: 15pt;
+    font-size: 10pt;
+
 }

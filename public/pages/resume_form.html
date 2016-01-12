@@ -60,7 +60,7 @@
                     <div class="form-group col-md-6">
                         <label for="state" class="col-md-2 control-label text-right">State:</label>
                         <div class="col-md-4">
-                            <input id="sN" ng-model="resume.states" type="text" placeholder="State" name="state" ng-minlength="2" ng-maxlength="3" required/>
+                            <input id="sN" ng-model="resume.state" type="text" placeholder="State" name="state" ng-minlength="2" ng-maxlength="3" required/>
                             <div class="help-block error-messages" ng-messages="resumeForm.state.$error" ng-if="resumeForm.state.$touched">
                                 <p ng-message="minlength">Enter State Abbreviation.</p>
                                 <p ng-message="maxlength">Enter State Abbreviation.</p>
@@ -73,7 +73,7 @@
 
                 <label class="col-sm-12 text-center" for="profile">Profile:</label>
                 <div class="col-sm-6 col-sm-offset-3 " ng-class="{ 'has-error': resumeForm.profile.$invalid && resumeForm.profile.$dirty }">
-                    <textarea id = "profile" name = "profile" class="form-control" ng-model="resume.profile" rows="3" ng-minlength="10" ng-maxlength="50" required></textarea>
+                    <textarea id = "profile" name = "profile" class="form-control" ng-model="resume.profile" rows="3" ng-minlength="50" ng-maxlength="300" required></textarea>
                 </div>
                 <!--NG messages for profile text box-->
                 <div class="help-block error-messages col-sm-6 col-sm-offset-3" ng-messages="resumeForm.profile.$error" ng-if="resumeForm.profile.$dirty">
@@ -92,8 +92,8 @@
                                     <option>Office</option>
                                     <option>Email</option>
                                     <option>Website</option>
-                                </select>
-                                <input type="text" ng-model="resume.info.detail['detail_' +$index]" name="info{{$index}}" placeholder="Enter info" required>
+                                </select>resume.education['entry' + $index].degree
+                                <input type="text" ng-model="resume.contact['info'+ $index].detail" name="info{{$index}}" placeholder="Enter info" required>
                                 <button class="btn btn-danger" ng-click="removeChoice($index)"><strong>-</strong></button>
                                 <div class = 'clearfix'></div>
                                 <div class="help-block error-messages col-sm-2 col-sm-offset-6" ng-messages="resumeForm['info' + $index].$error" ng-if="resumeForm['info' + $index].$touched">
@@ -155,7 +155,7 @@
 
                                 <label class="col-sm-12" for="educationBlurb">Education Blurb:</label>
                                 <div class="col-sm-6 col-sm-offset-3" ng-class="{ 'has-error': resumeForm['education' + $index].$invalid && resumeForm['education' + $index].$dirty}">
-                                    <textarea name="education{{$index}}" id="educationBlurb" class="form-control" ng-model="resume.education['entry' + $index].blurb" rows="3"  ng-minlength="10" ng-maxlength="50" required></textarea>
+                                    <textarea name="education{{$index}}" id="educationBlurb" class="form-control" ng-model="resume.education['entry' + $index].blurb" rows="3"  ng-minlength="10" ng-maxlength="150" required></textarea>
                                 </div>
                                 <!--NG messages for education text box-->
                                 <div  class="help-block error-messages col-sm-6 col-sm-offset-3" ng-messages="resumeForm['education' + $index].$error" ng-if="resumeForm['education' + $index].$dirty">
@@ -194,7 +194,7 @@
 
                                 <label class="col-sm-12" for="duties">Duties:</label>
                                 <div class="col-sm-6 col-sm-offset-3" ng-class="{ 'has-error': resumeForm['duties' + $index].$invalid && resumeForm['duties' + $index].$dirty}">
-                                    <textarea name= 'duties{{$index}}' id="duties" class="form-control" ng-model="resume.employer['entry' + $index].duties" rows="3" ng-minlength="10" ng-maxlength="50" required></textarea>
+                                    <textarea name= 'duties{{$index}}' id="duties" class="form-control" ng-model="resume.employer['entry' + $index].duties" rows="3" ng-minlength="10" ng-maxlength="150" required></textarea>
                                 </div>
                                 <!--NG messages for duties text box-->
                                 <div  class="help-block error-messages col-sm-6 col-sm-offset-3" ng-messages="resumeForm['duties' + $index].$error" ng-if="resumeForm['duties' + $index].$dirty">

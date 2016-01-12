@@ -1,18 +1,75 @@
 <div class="wrapUl" id="shelf-1" snap-drawer>
     <ul>
-        <li ng-click ="setResume(resume)", class = "col-mid-12 shelfItem" ng-class="{active : isSelected(resume)}" ng-repeat="resume in resumeviews">
+        <li ng-click ="setResume(resume)" class = "col-mid-12 shelfItem" ng-class="{active : isSelected(resume)}" ng-repeat="resume in resumeviews">
             <a ng-click ="setResume(resume)">{{resume.resumename}}</a>
         </li>
     </ul>
 </div>
 
-<div id="content" class="scrollable Wrap" snap-content snap-options="snapOpts">
+<div  id="content" class="scrollable Wrap" snap-content snap-options="snapOpts">
     <div ng-init= 'toggle(false)' ng-class="{'negativeWrap': toggle()}" class="resumeWrap">
-        <div class="">
-        </div>
+       <section class="sidePersonal">
+           <div class="iBlock introBlock">
+               <div class="personalIcon"></div>
+               <h1 class="resumeFont firstName">{{selected.firstname}}</h1>
+               <h2 class="resumeFont surName">{{selected.lastname}}</h2>
+               <h3 class="resumeFont title">{{selected.title | uppercase}}</h3>
+           </div>
+           <div class="iBlock profileBlock">
+               <div class="styleIcon"></div>
+               <h3 class="resumeFont fancyLine"><span>PROFILE</span></h3>
+               <p class="resumePara">{{selected.profile}}</p>
+           </div>
+           <div class="iBlock contactBlock">
+               <div class="styleIcon"></div>
+               <h3 class="resumeFont fancyLine"><span>CONTACT ME</span></h3>
+               <table class="contactList">
+                   <tr>
+                       <td><strong>L.</strong> {{selected.city}}, {{selected.state}}</li></td>
+
+                   </tr>
+                   <tr ng-repeat="info in selected.employer">
+                       <td>{{info.name}}</td>
+                   </tr>
+
+               </table>
+           </div>
+           <div class="iBlock personalBlock">
+               <div class="styleIcon"></div>
+               <h3 class="resumeFont fancyLine"><span>PERSONAL SKILLS</span></h3>
+           </div>
+       </section>
+        <section class="sideInfo">
+            <div class="iBlock educationBlock">
+                <div class="styleIcon"></div>
+                <h3 class="resumeFont fancyLine"><span>EDUCATION</span></h3>
+            </div>
+            <div class="iBlock employerBlock">
+                <div class="styleIcon"></div>
+                <h3 class="resumeFont fancyLine"><span>WORK EXPERIENCE</span></h3>
+            </div>
+            <div class="iBlock professionalBlock">
+                <div class="styleIcon"></div>
+                <h3 class="resumeFont fancyLine"><span>PROFESSIONAL SKILLS</span></h3>
+            </div>
+        </section>
     </div>
 
 </div>
+<!--<this works with the file structure of resume.employer.etc>-->
+<!--<tr ng-repeat="info in selected.employer">-->
+    <!--<td>{{info.name}}</td>-->
+<!--</tr>-->
 
+<!--<ul class="contactList">-->
+<!--<li><strong>L.</strong> {{selected.city}}, {{selected.state}}</li>-->
+<!--<li ng-repeat="info in selected.info.type">{{info}</li>-->
 
-<p> first name of selected item is : {{selected.firstname}} </p>
+<!--</ul>-->
+<!--<li ng-repeat="resume in selected"><strong>{{resume.info.type.type_0 | limitTo : limitContact}}.</strong> {{resume.info.detail.detail_0}}</li>-->
+<!--<h1 class="resumeFont">{{selected.firstname}}</h1>-->
+<!--why wont the bottom code work? I need to have a resume intialized so-->
+<!--the above code work when you arrive to route-->
+<!--ng-init="setResume(resume[1])"-->
+<!--<div class="personalIcon">-->
+<!--</div>-->

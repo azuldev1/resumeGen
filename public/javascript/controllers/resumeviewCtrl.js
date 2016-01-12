@@ -13,7 +13,9 @@ app.controller('resumeviewCtrl',['$scope', '$routeParams', 'sharedProperties', '
         method:'get'
     }).then(function(response){
         $scope.resumeviews = response.data;
+        $scope.selected = $scope.resumeviews[0];
     });
+    $scope.limitContact = 1;
     $scope.setResume = function(resume){
         $scope.selected = resume;
     }
