@@ -16,7 +16,7 @@ div.resumeWrap{
     float: left;
 }
 section.sidePersonal{
-    width:43%;
+    width:40%;
     height: 100%;
     display: inline-block;
 }
@@ -45,7 +45,7 @@ section.sidePersonal{
 
 /*Side B of resume content*/
 section.sideInfo{
-    width:57%;
+    width:60%;
     height: 100%;
     float: right;
     display: inline-block;
@@ -117,7 +117,7 @@ div.styleIcon {
 /*fancy line styling*/
 h3.fancyLine span {
     background: #fff;
-    padding: 0 10pt;
+    padding: 0 6pt;
     position: relative;
     z-index: 1;
 }
@@ -145,26 +145,75 @@ h3.resumeFont:before {
     margin: auto;
 
 }
-.contactList{
+ul.contactList{
     width: 80%;
     margin-top: 15pt;
     font-size: 10pt;
 
+
 }
 
+ul.eduList{
+    width: 80%;
+    font-size: 10pt;
+    margin: auto;
+    padding: 0 0 0 16pt;
+    list-style-type:circle;
+    list-style-position: outside;
+}
+
+p.eduBlurb{
+    width: 100%;
+}
+
+.eduDate {
+    font-size: 8pt;
+}
+
+ul.empList{
+    width: 80%;
+    font-size: 10pt;
+    margin: auto;
+    padding: 0 0 0 16pt;
+    list-style-type:circle;
+    list-style-position: outside;
+}
+
+p.empBlurb{
+    width: 100%;
+}
+
+.empDate {
+    font-size: 8pt;
+}
 /*Resume info graphic styling */
 
 
 div.centerGauges{
     margin: auto;
-    padding: 5%;
-    width: 100%;
+    width: 138pt;
 }
 div.gaugeWrap{
-    width: 50%;
-   text-align: center;
-    float: right;
+    width: 69pt;
+    text-align: center;
+    position: relative;
 }
+div.gaugeWrap:nth-of-type(odd) {
+    float: right;
+    background-color: red;
+
+}
+div.gaugeWrap:nth-of-type(even) {
+    float: left;
+    background-color: blue;
+}
+div.gaugeWrap:nth-of-type(3) {
+    margin-top: 13pt;
+}
+div.gaugeWrap:nth-of-type(4) {
+    margin-top: 13pt;
+}
+
 progress-arc {
     position: relative;
 }
@@ -173,7 +222,8 @@ p.personalSkill-text {
     top: 0;
     text-align: center;
     width: 100%;
-    margin-top: 85px;
+    height: 70px;
+    margin-top: 20pt;
     font-size: 10pt;
 }
 
@@ -185,4 +235,82 @@ svg {
 
 circle {
     transition: stroke-dashoffset 0.1s linear;
+}
+
+/*Resume info proSkills meter */
+
+div.centerBars{
+    margin: auto;
+    width: 80%;
+}
+div.skillBar{
+    width: 133pt;
+    margin-top: 10pt;
+    position: relative;
+}
+div.skillBar:nth-of-type(odd) {
+    float: right;
+    background-color: red;
+}
+div.skillBar:nth-of-type(even) {
+    float: left;
+    background-color: blue;
+}
+/*div.skillBar:nth-of-type(3) {*/
+    /*margin-top: 5pt;*/
+/*}*/
+/*div.skillBar:nth-of-type(4) {*/
+    /*margin-top: 5pt;*/
+/*}*/
+div.skillBar > span {
+    width: 66pt;
+    font-size: 10pt;
+    background-color: #6f5899;
+    padding-right: 10pt;
+    position: relative;
+    text-align: left;
+    display: inline-block;
+    vertical-align: bottom;
+}
+div.meter {
+    width: 60pt;
+    height: 15px;  /* Can be anything */
+    position: relative;
+    background: #555;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    padding: 5px;
+    box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+    display: inline-block;
+    vertical-align: bottom;
+}
+.meter > span {
+    display: block;
+    height: 100%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgb(43,194,83);
+    background-image: linear-gradient(
+            center bottom,
+            rgb(43,194,83) 37%,
+            rgb(84,240,84) 69%
+    );
+    box-shadow:
+            inset 0 2px 9px  rgba(255,255,255,0.3),
+            inset 0 -2px 6px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.orange > span {
+    background-color: #f1a165;
+    background-image: linear-gradient(to bottom, #f1a165, #f36d0a);
+}
+
+.red > span {
+    background-color: #f0a3a3;
+    background-image: linear-gradient(to bottom, #f0a3a3, #f42323);
 }

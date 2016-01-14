@@ -8,6 +8,7 @@
   "dependencies": {
     "angular": "^1.4.8",
     "angular-messages": "^1.4.8",
+    "angular-progress-arc": "^1.0.0",
     "angular-route": "^1.4.8",
     "angular-snap": "^1.8.5",
     "angular-ui-bootstrap": "^0.14.3",

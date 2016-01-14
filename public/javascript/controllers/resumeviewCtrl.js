@@ -24,3 +24,18 @@ app.controller('resumeviewCtrl',['$scope', '$routeParams', 'sharedProperties', '
     }
 
 }]);
+
+app.filter('dateFormat', function($filter)
+{
+    return function(input)
+    {
+        if(input == null){ return ""; }
+
+        var _date = $filter('date')(new Date(input), 'MMM yyyy');
+
+        return _date.toUpperCase();
+
+    };
+});
+
+//variable to limit characters and dates
