@@ -101,19 +101,55 @@ div.personalIcon {
      /*background-position:50% 50%;*/
      /*background-repeat:no-repeat;*/
  }
+
+/*this control the size of each icon the id only contains*/
+/*the img url*/
+
 div.styleIcon {
-    width: 30pt;
-    height: 30pt;
+    width: 36pt;
+    height: 36pt;
     margin: 20pt auto 0;
     background: lightgray;
     border: 1pt solid black;
-    -moz-border-radius: 15pt;
-    -webkit-border-radius: 15pt;
-    /*background-image: url("img/mobile.png");*/
-    /*background-size: 40px 40px;*/
-    /*background-position:50% 50%;*/
-    /*background-repeat:no-repeat;*/
+    -moz-border-radius: 18pt;
+    -webkit-border-radius: 18pt;
+    background-size: 24pt;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+
+
 }
+
+#folder {
+    background-image: url('/images/icons/folder_icon.png');
+
+}
+
+#contact {
+    background-image: url('/images/icons/contact_icon.png');
+
+}
+
+#chart {
+    background-image: url('/images/icons/chart_icon.png');
+
+}
+
+#education {
+    background-image: url('/images/icons/edu_icon.png');
+
+}
+
+#employment {
+    background-image: url('/images/icons/emp_icon.png');
+
+}
+
+#skills {
+    background-image: url('/images/icons/skill_icon.png');
+
+}
+
 /*fancy line styling*/
 h3.fancyLine span {
     background: #fff;

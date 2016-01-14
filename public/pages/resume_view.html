@@ -10,18 +10,18 @@
     <div ng-init= 'toggle(false)' ng-class="{'negativeWrap': toggle()}" class="resumeWrap">
        <section class="sidePersonal">
            <div class="iBlock introBlock">
-               <div class="personalIcon"></div>
+               <div  class="personalIcon"></div>
                <h1 class="resumeFont firstName">{{selected.firstname}}</h1>
                <h2 class="resumeFont surName">{{selected.lastname}}</h2>
                <h3 class="resumeFont title">{{selected.title | uppercase}}</h3>
            </div>
            <div class="iBlock profileBlock">
-               <div class="styleIcon"></div>
+               <div id="folder" class="styleIcon"></div>
                <h3 class="resumeFont fancyLine"><span>PROFILE</span></h3>
                <p class="resumePara">{{selected.profile}}</p>
            </div>
            <div class="iBlock contactBlock">
-               <div class="styleIcon"></div>
+               <div id="contact" class="styleIcon"></div>
                <h3 class="resumeFont fancyLine"><span>CONTACT ME</span></h3>
 
                <ul class="contactList">
@@ -30,7 +30,7 @@
                </ul>
            </div>
            <div class="iBlock personalBlock">
-               <div class="styleIcon"></div>
+               <div id="chart" class="styleIcon"></div>
                <h3 class="resumeFont fancyLine"><span>PERSONAL SKILLS</span></h3>
                 <div class = 'centerGauges'>
                        <div ng-repeat="skill in selected.personalSkill" class="gaugeWrap" ng-controller = 'gaugeCtrl'>
@@ -50,7 +50,7 @@
        </section>
         <section class="sideInfo">
             <div class="iBlock educationBlock">
-                <div class="styleIcon"></div>
+                <div id="education" class="styleIcon "></div>
                 <h3 class="resumeFont fancyLine"><span>EDUCATION</span></h3>
                 <ul class="eduList">
                     <li ng-repeat="edu in selected.education" ><span><strong>{{edu.degree}} /</strong> <span class="eduDate">{{edu.start | dateFormat}} - {{edu.end | dateFormat}}</span></span>
@@ -59,7 +59,7 @@
                 </ul>
             </div>
             <div class="iBlock employerBlock">
-                <div class="styleIcon"></div>
+                <div id="employment" class="styleIcon"></div>
                 <h3 class="resumeFont fancyLine"><span>WORK EXPERIENCE</span></h3>
                 <ul class="empList">
                     <li ng-repeat="emp in selected.employer" ><span><strong>{{emp.name}} /</strong> {{emp.title}} / <span class="empDate">{{emp.start | dateFormat}} - {{emp.end | dateFormat}}</span></span>
@@ -68,7 +68,7 @@
                 </ul>
             </div>
             <div class="iBlock professionalBlock">
-                <div class="styleIcon"></div>
+                <div id="skills" class="styleIcon"></div>
                 <h3 class="resumeFont fancyLine"><span>PROFESSIONAL SKILLS</span></h3>
                 <div class = 'centerBars'>
                     <div class="skillBar" ng-repeat="skill in selected.professionalSkill">
