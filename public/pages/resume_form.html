@@ -86,21 +86,18 @@
                     <div class="col-sm-12 text-center lead"><span>Contact Info</span></div>
                     <div class="form-group col-sm-12 text-center">
                             <fieldset ng-class="{'contactError': resumeForm['info' + $index].$touched && resumeForm['info' + $index].$invalid}" class="contactField col-sm-12"  data-ng-repeat="info in infos">
-                                <select ng-model="resume.contact['info'+ $index].type" required>
-                                    <option>Mobile</option>
-                                    <option>Home</option>
-                                    <option>Office</option>
-                                    <option>Email</option>
-                                    <option>Website</option>
-                                </select>
+                                <input type="text" ng-model="resume.contact['info'+ $index].type" name="type{{$index}}" placeholder="Type" required>
                                 <input type="text" ng-model="resume.contact['info'+ $index].detail" name="info{{$index}}" placeholder="Enter info" required>
                                 <button class="btn btn-danger" ng-click="removeChoice($index)"><strong>-</strong></button>
                                 <div class = 'clearfix'></div>
-                                <div class="help-block error-messages col-sm-2 col-sm-offset-6" ng-messages="resumeForm['info' + $index].$error" ng-if="resumeForm['info' + $index].$touched">
+                                <div class="help-block o-error-messages col-sm-2 col-sm-offset-3" ng-messages="resumeForm['type' + $index].$error" ng-if="resumeForm['type' + $index].$touched">
+                                    <p ng-messages-include="messages.html"></p>
+                                </div>
+                                <div class="help-block error-messages col-sm-2 col-sm-offset-1" ng-messages="resumeForm['info' + $index].$error" ng-if="resumeForm['info' + $index].$touched">
                                     <p ng-messages-include="messages.html"></p>
                                 </div>
                             </fieldset>
-                            <button class="addfield btn btn-info" ng-click="addNewChoice()">Add Info</button>
+                            <button ng-hide = "infos.length > 4" class="addfield btn btn-info" ng-click="addNewChoice()">Add Info</button>
                     </div>
 
                 <hr class = 'col-sm-12' />
@@ -165,7 +162,7 @@
                                 </div>
                                 <div class = "col-sm-12 bottomRemove"><button class="btn btn-danger" ng-click="removeChoiceEdu($index)"><strong>-</strong></button></div>
                             </fieldset>
-                            <button class="addfield btn btn-info" ng-click="addNewChoiceEdu()">Add School</button>
+                            <button ng-hide = "schools.length > 2" class="addfield btn btn-info" ng-click="addNewChoiceEdu()">Add School</button>
                         </div>
                     </div>
                 <hr class = 'col-sm-12' />
@@ -205,7 +202,7 @@
 
                                 <div class = "col-sm-12 bottomRemove"><button class="btn btn-danger" ng-click="removeChoiceEmp($index)"><strong>-</strong></button></div>
                             </fieldset>
-                            <button class="addfield btn btn-info" ng-click="addNewChoiceEmp()">Add Employer</button>
+                            <button ng-hide = "employers.length > 2" class="addfield btn btn-info" ng-click="addNewChoiceEmp()">Add Employer</button>
                         </div>
                     </div>
 
@@ -226,7 +223,7 @@
                                 <button class="btn btn-danger" ng-click="removeChoiceProskill($index)"><strong>-</strong></button>
 
                             </fieldset>
-                            <button class="addfield btn btn-info" ng-click="addNewChoiceProskill()">Add Skill</button>
+                            <button ng-hide = "proSkills.length > 5" class="addfield btn btn-info" ng-click="addNewChoiceProskill()">Add Skill</button>
                     </div>
 
                 <button ng-disabled="resumeForm.$invalid"  ng-click ="submit(resume)" type="submit"  ng-class="{ 'invalidSubmit': resumeForm.$invalid}" class="finalSubmit col-sm-offset-3 col-sm-6 btn-primary btn-lg btn-default form-button" >Submit</button>

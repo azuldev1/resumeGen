@@ -8,7 +8,7 @@
 
 <div  id="content" class="scrollable Wrap" snap-content snap-options="snapOpts">
     <div print-section ng-init= 'toggle(false)' ng-class="{'negativeWrap': toggle()}" class="resumeWrap">
-       <div class="contentDiv" avoidPageBreak print-section>
+       <div class="contentDiv" print-section>
             <section class="sidePersonal">
                <div class="iBlock introBlock">
                    <h1 class="resumeFont firstName">{{selected.firstname}}</h1>
@@ -26,7 +26,7 @@
 
                    <ul class="contactList">
                        <li><strong>L.</strong> {{selected.city}}, {{selected.state}}</li>
-                       <li ng-repeat="info in selected.contact" ><strong>{{info.type | limitTo: limitContact}}. </strong>{{info.detail}}</li>
+                       <li ng-repeat="info in selected.contact" ><strong>{{info.type | limitTo: limitContact}}. </strong>{{info.detail | tel}}</li>
                    </ul>
                </div>
                <div class="iBlock personalBlock">
@@ -74,7 +74,7 @@
                         <div class="skillBar" ng-repeat="skill in selected.professionalSkill">
                             <span>{{skill.name | uppercase}}</span>
                             <div class=" meter" ng-controller = 'gaugeCtrl'>
-                                <img style="width: {{skill.value / 2}}%; background-color: grey;" src="/images/icons/bar.png" ></img>
+                                <img style="width: {{skill.value / 2}}%; background-color: grey;" src="/images/icons/bar.png"></img>
                             </div>
                         </div>
                     </div>

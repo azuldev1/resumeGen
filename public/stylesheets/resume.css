@@ -307,14 +307,13 @@ div.meter {
 }
 .meter > img {
     display: block;
-    height: 5px;
+    height: 100%;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-top-left-radius: 15pt;
     border-bottom-left-radius: 15pt;
     background-color: grey;
     position: relative;
-    top: -1px;
     left: -1px;
     z-index: -1;
 

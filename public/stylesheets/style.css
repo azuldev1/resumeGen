@@ -148,6 +148,23 @@ button.addfield{
     border-color:transparent transparent maroon;
     border-width:5px;
 }
+.o-error-messages.ng-active {
+    background:maroon;
+    color:white;
+    padding:5px;
+    border-radius:5px;
+    margin-top:15px;
+    position:relative;
+}
+.o-error-messages.ng-active:after {
+    position:absolute;
+    top:-10px;
+    content:"";
+    right:20px;
+    border-style:solid;
+    border-color:transparent transparent maroon;
+    border-width:5px;
+}
 
 /*invalid submit*/
 .invalidSubmit{
