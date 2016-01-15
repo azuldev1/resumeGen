@@ -1,13 +1,14 @@
 div.resumeWrap{
-    width:8.25in;
-    height: 11.75in;
-    margin: 10px auto 80px;
+    width:8.5in;
+    height: 11in;
+    margin: 15pt auto 20pt;
+    padding: .39in;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: .25in;
-    background-color: #6f5899;
-    /*background: url("../images/lightNoise.png");*/
-    background-repeat: repeat;
 
+}
+div.contentDiv{
+    width: 100%;
+    height: 100%;
 }
 
 /*Side A of resume content*/
@@ -23,25 +24,22 @@ section.sidePersonal{
 }
 
 .introBlock{
+    padding-top: 30pt;
     width: 100%;
-    height: 25%;
-    background-color: lightblue;
+    height: 16%;
 }
 .profileBlock{
     width: 100%;
-    height: 24%;
-    background-color: lightyellow;
+    height: 27%;
 }
 
 .contactBlock{
     width: 100%;
-    height: 24%;
-    background-color: lightcoral;
+    height: 27%;
 }
 .personalBlock{
     width: 100%;
-    height: 27%;
-    background-color: lightgreen;
+    height: 30%;
 }
 
 /*Side B of resume content*/
@@ -55,17 +53,17 @@ section.sideInfo{
 .educationBlock{
     width: 100%;
     height: 35%;
-    background-color: lightblue;
+    /*background-color: lightblue;*/
 }
 .employerBlock{
     width: 100%;
     height: 35%;
-    background-color: lightyellow;
+    /*background-color: lightyellow;*/
 }
 .professionalBlock{
     width: 100%;
     height: 30%;
-    background-color: lightgreen;
+    /*background-color: lightgreen;*/
 }
 /*Resume font styling*/
 .resumeFont{
@@ -77,93 +75,72 @@ h1.resumeFont{
     margin: 5pt;
     font-size: 24pt;
     letter-spacing: 3pt;
+    font-weight: 300;
 }
 h2.resumeFont{
-    margin: 3pt;
+    margin: 6pt;
     font-size: 18pt;
     letter-spacing: 2pt;
+    font-weight: 300;
 }
 h3.resumeFont{
-    font-size: 15pt;
+    font-size: 14pt;
+    font-weight: 300;
     letter-spacing: 1pt;
     margin-top: 10pt;
 }
 
 /*Resume Icons*/
-div.personalIcon {
-     width: 80pt;
-     height: 80pt;
-     margin: 20pt auto 0;
-     background: lightgray;
-     -moz-border-radius: 40pt;
-     -webkit-border-radius: 40pt;
-     /*background-image: url("img/mobile.png");*/
-     /*background-size: 40px 40px;*/
-     /*background-position:50% 50%;*/
-     /*background-repeat:no-repeat;*/
- }
+/*div.personalIcon {*/
+     /*width: 80pt;*/
+     /*height: 80pt;*/
+     /*margin: 20pt auto 0;*/
+     /*background: lightgray;*/
+     /*-moz-border-radius: 40pt;*/
+     /*-webkit-border-radius: 40pt;*/
+     /*!*background-image: url("img/mobile.png");*!*/
+     /*!*background-size: 40px 40px;*!*/
+     /*!*background-position:50% 50%;*!*/
+     /*!*background-repeat:no-repeat;*!*/
+ /*}*/
 
 /*this control the size of each icon the id only contains*/
 /*the img url*/
-
 div.styleIcon {
-    width: 36pt;
-    height: 36pt;
+    width: 32pt;
+    height: 32pt;
     margin: 20pt auto 0;
-    background: lightgray;
-    border: 1pt solid black;
-    -moz-border-radius: 18pt;
-    -webkit-border-radius: 18pt;
-    background-size: 24pt;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-
-
+    border: 1.25pt solid black;
+    -moz-border-radius: 16pt;
+    -webkit-border-radius: 16pt;
+    text-align: center;
+    font: 0/0 a;
+}
+.styleIcon:before {    /* create a full-height inline block pseudo=element */
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    height: 100%;
+}
+img.icon{
+    display: inline-block;
+    vertical-align: middle;
 }
 
-#folder {
-    background-image: url('/images/icons/folder_icon.png');
-
-}
-
-#contact {
-    background-image: url('/images/icons/contact_icon.png');
-
-}
-
-#chart {
-    background-image: url('/images/icons/chart_icon.png');
-
-}
-
-#education {
-    background-image: url('/images/icons/edu_icon.png');
-
-}
-
-#employment {
-    background-image: url('/images/icons/emp_icon.png');
-
-}
-
-#skills {
-    background-image: url('/images/icons/skill_icon.png');
-
-}
 
 /*fancy line styling*/
+
 h3.fancyLine span {
-    background: #fff;
     padding: 0 6pt;
     position: relative;
     z-index: 1;
 }
-h3.fancyLine:before {
-    background: black;
+h3.fancyLine:after {
+    border: 1pt solid black;
     content: "";
     display: block;
-    height: 1px;
-    position: absolute;
+    height: 1pt;
+    position: relative;
     top: 50%;
     width: 80%;
     left:0;
@@ -171,7 +148,7 @@ h3.fancyLine:before {
     margin: auto;
 }
 
-h3.resumeFont:before {
+h3.resumeFont:after {
     left: 0;
 }
 
@@ -182,8 +159,18 @@ h3.resumeFont:before {
     margin: auto;
 
 }
+h3.title{
+    font-weight: 300;
+    color: dimgray;
+    letter-spacing: 5pt;
+}
+
+
+
+/*Resume contact section */
 .contactList li{
     list-style: none;
+    padding-top: 8pt;
 }
 ul.contactList{
     width: 80%;
@@ -193,6 +180,8 @@ ul.contactList{
 
 }
 
+
+/*Resume education section */
 ul.eduList{
     width: 80%;
     font-size: 10pt;
@@ -211,6 +200,7 @@ p.eduBlurb{
 }
 
 ul.empList{
+    padding-top: 10pt;
     width: 80%;
     font-size: 10pt;
     margin: auto;
@@ -230,6 +220,7 @@ p.empBlurb{
 
 
 div.centerGauges{
+    padding-top: 10pt;
     margin: auto;
     width: 138pt;
 }
@@ -240,12 +231,9 @@ div.gaugeWrap{
 }
 div.gaugeWrap:nth-of-type(odd) {
     float: right;
-    background-color: red;
-
 }
 div.gaugeWrap:nth-of-type(even) {
     float: left;
-    background-color: blue;
 }
 div.gaugeWrap:nth-of-type(3) {
     margin-top: 13pt;
@@ -284,60 +272,52 @@ div.centerBars{
     width: 80%;
 }
 div.skillBar{
-    width: 133pt;
-    margin-top: 10pt;
+    width: 120pt;
+    margin-top: 12pt;
     position: relative;
 }
 div.skillBar:nth-of-type(odd) {
     float: right;
-    background-color: red;
+
 }
 div.skillBar:nth-of-type(even) {
     float: left;
-    background-color: blue;
+
 }
-/*div.skillBar:nth-of-type(3) {*/
-    /*margin-top: 5pt;*/
-/*}*/
-/*div.skillBar:nth-of-type(4) {*/
-    /*margin-top: 5pt;*/
-/*}*/
+
 div.skillBar > span {
-    width: 66pt;
-    font-size: 10pt;
-    background-color: #6f5899;
-    padding-right: 10pt;
+    width: 56pt;
+    font-size: 8pt;
     position: relative;
     text-align: left;
     display: inline-block;
     vertical-align: bottom;
+
 }
 div.meter {
-    width: 62pt;
+    width: 58pt;
     height: 5pt;  /* Can be anything */
     position: relative;
-    background: white;
     border: .75pt solid black;
     -moz-border-radius: 19pt;
     -webkit-border-radius: 19pt;
     border-radius: 19pt;
-    box-shadow: inset 0 -1pt 1pt rgba(255,255,255,0.3);
     display: inline-block;
     vertical-align: middle;
 }
-.meter > span {
+.meter > img {
     display: block;
-    height: 100%;
-    border-top-right-radius: 15pt;
-    border-bottom-right-radius: 15pt;
+    height: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     border-top-left-radius: 15pt;
     border-bottom-left-radius: 15pt;
-    background-color: lightgray;
-    box-shadow:
-            inset 0 2px 9px  rgba(255,255,255,0.3),
-            inset 0 -2px 6px rgba(0,0,0,0.4);
+    background-color: grey;
     position: relative;
-    overflow: hidden;
+    top: -1px;
+    left: -1px;
+    z-index: -1;
+
 }
 
 .orange > span {
@@ -349,3 +329,5 @@ div.meter {
     background-color: #f0a3a3;
     background-image: linear-gradient(to bottom, #f0a3a3, #f42323);
 }
+
+

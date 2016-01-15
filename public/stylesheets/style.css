@@ -6,7 +6,7 @@ body {
 }
 div.Wrap{
     height: 100%;
-    padding-top: 70px;
+    padding-top: 50px;
 }
 
 
@@ -221,3 +221,13 @@ li.shelfItem a{
     transition-timing-function: linear, linear;
     -webkit-overflow-scrolling: touch;
 }
+
+div.print{
+    display: inline-block;
+    position: absolute;
+    left: 100px;
+    bottom: 90%;
+
+
+}
+

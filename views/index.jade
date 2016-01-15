@@ -1,7 +1,7 @@
 extends layout
 
 block content
- nav.navbar.navbar-default.navbar-static-top(ng-controller="navControl")
+ nav.navbar.navbar-default.navbar-static-top(ng-controller="navControl" print-remove)
     .container
       .navbar-header
        button.navbar-toggle.collapsed( type='button', ng-init='navCollapsed = true', ng-click='navCollapsed = !navCollapsed')

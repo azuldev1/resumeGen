@@ -2,7 +2,7 @@
  * Created by Manu on 12/15/15.
  */
 var app = angular.module('myApp',['ngRoute',
-    'ui.bootstrap', 'ngMessages', 'snap','angular-progress-arc']);
+    'ui.bootstrap', 'ngMessages', 'snap','angular-progress-arc', 'AngularPrint']);
 app.config(['$routeProvider', function($routeProvider){
     $routeProvider
         .when('/', {
@@ -46,7 +46,8 @@ app.controller('navControl', ['$scope','sharedProperties', '$location', function
         var active = (viewLocation === $location.path());
         return active;
     };
-    $scope.showDots = $location.path() === '/resume_view';
+    $scope.showDots = $location.path() === '/resume_view'
+    ;
 
 }]);
 

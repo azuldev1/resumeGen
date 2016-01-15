@@ -7,110 +7,82 @@
 </div>
 
 <div  id="content" class="scrollable Wrap" snap-content snap-options="snapOpts">
-    <div ng-init= 'toggle(false)' ng-class="{'negativeWrap': toggle()}" class="resumeWrap">
-       <section class="sidePersonal">
-           <div class="iBlock introBlock">
-               <div  class="personalIcon"></div>
-               <h1 class="resumeFont firstName">{{selected.firstname}}</h1>
-               <h2 class="resumeFont surName">{{selected.lastname}}</h2>
-               <h3 class="resumeFont title">{{selected.title | uppercase}}</h3>
-           </div>
-           <div class="iBlock profileBlock">
-               <div id="folder" class="styleIcon"></div>
-               <h3 class="resumeFont fancyLine"><span>PROFILE</span></h3>
-               <p class="resumePara">{{selected.profile}}</p>
-           </div>
-           <div class="iBlock contactBlock">
-               <div id="contact" class="styleIcon"></div>
-               <h3 class="resumeFont fancyLine"><span>CONTACT ME</span></h3>
+    <div print-section ng-init= 'toggle(false)' ng-class="{'negativeWrap': toggle()}" class="resumeWrap">
+       <div class="contentDiv" avoidPageBreak print-section>
+            <section class="sidePersonal">
+               <div class="iBlock introBlock">
+                   <h1 class="resumeFont firstName">{{selected.firstname}}</h1>
+                   <h2 class="resumeFont surName">{{selected.lastname}}</h2>
+                   <h3 class="resumeFont title">{{selected.title | uppercase}}</h3>
+               </div>
+               <div class="iBlock profileBlock">
+                   <div class="styleIcon"><img class="icon" src="/images/icons/folder_icon.png" alt="profile section" height="30pt" width="30pt"></div>
+                   <h3 class="resumeFont fancyLine"><span class="helper">PROFILE</span></h3>
+                   <p class="resumePara">{{selected.profile}}</p>
+               </div>
+               <div class="iBlock contactBlock">
+                   <div class="styleIcon"><img class="icon" src="/images/icons/contact_icon.png" alt="contact section" height="30pt" width="30pt"></div>
+                   <h3 class="resumeFont fancyLine"><span>CONTACT ME</span></h3>
 
-               <ul class="contactList">
-                   <li><strong>L.</strong> {{selected.city}}, {{selected.state}}</li>
-                   <li ng-repeat="info in selected.contact" ><strong>{{info.type | limitTo: limitContact}}. </strong>{{info.detail}}</li>
-               </ul>
-           </div>
-           <div class="iBlock personalBlock">
-               <div id="chart" class="styleIcon"></div>
-               <h3 class="resumeFont fancyLine"><span>PERSONAL SKILLS</span></h3>
-                <div class = 'centerGauges'>
-                       <div ng-repeat="skill in selected.personalSkill" class="gaugeWrap" ng-controller = 'gaugeCtrl'>
-                           <progress-arc
-                                   size="{{ size }}"
-                                   stroke="{{ stroke }}"
-                                   stroke-width="{{ strokeWidth }}"
-                                   complete="skill.value  / 200"
-                                   background="{{ background }}"
-                                   counter-clockwise="{{ counterClockwise }}"></progress-arc>
-                           <p class ='personalSkill-text'>{{skill.name}}</p>
-                       </div>
+                   <ul class="contactList">
+                       <li><strong>L.</strong> {{selected.city}}, {{selected.state}}</li>
+                       <li ng-repeat="info in selected.contact" ><strong>{{info.type | limitTo: limitContact}}. </strong>{{info.detail}}</li>
+                   </ul>
+               </div>
+               <div class="iBlock personalBlock">
+                   <div class="styleIcon"><img class="icon" src="/images/icons/chart_icon.png" alt="personal skills section" height="30pt" width="30pt"></div>
+                   <h3 class="resumeFont fancyLine"><span>PERSONAL SKILLS</span></h3>
+                    <div class = 'centerGauges'>
+                           <div ng-repeat="skill in selected.personalSkill" class="gaugeWrap" ng-controller = 'gaugeCtrl'>
+                               <progress-arc
+                                       size="{{ size }}"
+                                       stroke="{{ stroke }}"
+                                       stroke-width="{{ strokeWidth }}"
+                                       complete="skill.value  / 200"
+                                       background="{{ background }}"
+                                       counter-clockwise="{{ counterClockwise }}"></progress-arc>
+                               <p class ='personalSkill-text'>{{skill.name | lowercase}}</p>
+                           </div>
+                    </div>
+
+
+               </div>
+           </section>
+            <section class="sideInfo">
+                <div class="iBlock educationBlock">
+                    <div class="styleIcon"><img class="icon" src="/images/icons/edu_icon.png" alt="education section" height="30pt" width="30pt"></div>
+                    <h3 class="resumeFont fancyLine"><span>EDUCATION</span></h3>
+                    <ul class="eduList">
+                        <li ng-repeat="edu in selected.education" ><span><strong>{{edu.degree}} /</strong> <span class="eduDate">{{edu.start | dateFormat}} - {{edu.end | dateFormat}}</span></span>
+                            <p class="eduBlurb"><em>{{edu.name}} :</em> {{edu.blurb}}</p>
+                        </li>
+                    </ul>
                 </div>
-
-
-           </div>
-       </section>
-        <section class="sideInfo">
-            <div class="iBlock educationBlock">
-                <div id="education" class="styleIcon "></div>
-                <h3 class="resumeFont fancyLine"><span>EDUCATION</span></h3>
-                <ul class="eduList">
-                    <li ng-repeat="edu in selected.education" ><span><strong>{{edu.degree}} /</strong> <span class="eduDate">{{edu.start | dateFormat}} - {{edu.end | dateFormat}}</span></span>
-                        <p class="eduBlurb"><em>{{edu.name}} :</em> {{edu.blurb}}</p>
-                    </li>
-                </ul>
-            </div>
-            <div class="iBlock employerBlock">
-                <div id="employment" class="styleIcon"></div>
-                <h3 class="resumeFont fancyLine"><span>WORK EXPERIENCE</span></h3>
-                <ul class="empList">
-                    <li ng-repeat="emp in selected.employer" ><span><strong>{{emp.name}} /</strong> {{emp.title}} / <span class="empDate">{{emp.start | dateFormat}} - {{emp.end | dateFormat}}</span></span>
-                        <p class="empBlurb"><em>{{emp.name}} :</em> {{emp.duties}}</p>
-                    </li>
-                </ul>
-            </div>
-            <div class="iBlock professionalBlock">
-                <div id="skills" class="styleIcon"></div>
-                <h3 class="resumeFont fancyLine"><span>PROFESSIONAL SKILLS</span></h3>
-                <div class = 'centerBars'>
-                    <div class="skillBar" ng-repeat="skill in selected.professionalSkill">
-                        <span>Test</span>
-                        <div class=" meter" ng-controller = 'gaugeCtrl'>
-                            <span style="width: {{skill.value / 2}}%"></span>
+                <div class="iBlock employerBlock">
+                    <div class="styleIcon"><img class="icon" src="/images/icons/emp_icon.png" alt="employer section" height="30pt" width="30pt"></div>
+                    <h3 class="resumeFont fancyLine"><span>WORK EXPERIENCE</span></h3>
+                    <ul class="empList">
+                        <li ng-repeat="emp in selected.employer" ><span><strong>{{emp.name}} /</strong> {{emp.title}} / <span class="empDate">{{emp.start | dateFormat}} - {{emp.end | dateFormat}}</span></span>
+                            <p class="empBlurb"><em>{{emp.name}} :</em> {{emp.duties}}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="iBlock professionalBlock">
+                    <div class="styleIcon"><img class="icon" src="/images/icons/skill_icon.png" alt="skill section" height="30pt" width="30pt"></div>
+                    <h3 class="resumeFont fancyLine"><span>PROFESSIONAL SKILLS</span></h3>
+                    <div class = 'centerBars'>
+                        <div class="skillBar" ng-repeat="skill in selected.professionalSkill">
+                            <span>{{skill.name | uppercase}}</span>
+                            <div class=" meter" ng-controller = 'gaugeCtrl'>
+                                <img style="width: {{skill.value / 2}}%; background-color: grey;" src="/images/icons/bar.png" ></img>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
+            </section>
+       </div>
+    </div >
+    <div class="print"><button print-btn class="btn btn-success btn-default " type="button" > <span class="glyphicon glyphicon-print"></span>  PRINT</button></div>
+
 </div>
 
-<!--<ul ng-controller = 'gaugeCtrl'>-->
-    <!--<li><progress-arc-->
-<!--ng-repeat="skill in selected.personalSkill"-->
-<!--skill.value / 200-->
-            <!--size="{{ size }}"-->
-            <!--stroke="{{ stroke }}"-->
-            <!--stroke-width="{{ strokeWidth }}"-->
-            <!--complete="{}"-->
-            <!--background="{{ background }}"-->
-            <!--counter-clockwise="{{ counterClockwise }}"></progress-arc></li>-->
-<!--</ul>-->
-
-
-
-<!--<this works with the file structure of resume.employer.etc>-->
-<!--<tr ng-repeat="info in selected.employer">-->
-    <!--<td>{{info.name}}</td>-->
-<!--</tr>-->
-
-<!--<ul class="contactList">-->
-<!--<li><strong>L.</strong> {{selected.city}}, {{selected.state}}</li>-->
-<!--<li ng-repeat="info in selected.info.type">{{info}</li>-->
-
-<!--</ul>-->
-<!--<li ng-repeat="resume in selected"><strong>{{resume.info.type.type_0 | limitTo : limitContact}}.</strong> {{resume.info.detail.detail_0}}</li>-->
-<!--<h1 class="resumeFont">{{selected.firstname}}</h1>-->
-<!--why wont the bottom code work? I need to have a resume intialized so-->
-<!--the above code work when you arrive to route-->
-<!--ng-init="setResume(resume[1])"-->
-<!--<div class="personalIcon">-->
-<!--</div>-->
