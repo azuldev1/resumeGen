@@ -52,14 +52,16 @@ app.controller('formCtrl',['$scope','$http','$location', function($scope,$http,$
     };
 
     $scope.submit = function(resume) {
-
+        console.log("HERE: ", resume)
         $http({
             url:'/resumeform',
             method:'post',
             data: resume
         }).then(function (response) {
             console.log(response.status);
-            $location.path('/resume_view');
+            console.log(response);
+            console.log(resume)
+
         });
     };
 

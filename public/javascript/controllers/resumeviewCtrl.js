@@ -9,7 +9,7 @@ app.controller('resumeviewCtrl',['$scope', '$routeParams', 'sharedProperties', '
         sharedProperties.setProperty(false);
     });
     $http({
-        url:'/resumeview',
+        url:'/resumeform',
         method:'get'
     }).then(function(response){
         $scope.resumeviews = response.data;
