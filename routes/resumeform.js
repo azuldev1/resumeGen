@@ -19,7 +19,7 @@ router.get("/", function(req,res){
 });
 /* Post new resumes. */
 router.post("/", function(req,res){
-    console.log(req);
+    console.log(req.body);
 
     var resume = new Resume();
     resume.resumename = req.body.resumename
